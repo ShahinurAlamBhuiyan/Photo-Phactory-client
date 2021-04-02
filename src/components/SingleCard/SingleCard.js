@@ -30,10 +30,10 @@ const SingleCard = ({ photo: { photographer, photoURL, _id, caption, salary } })
                 <CardActionArea>
                     <CardMedia component="img" height="220" image={photoURL} />
                     <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
+                        <Typography gutterBottom variant="h6" component="h2">
                             {caption}
                         </Typography>
-                        <Typography variant="" color="textSecondary" component="h5">
+                        <Typography color="textSecondary" component="h5">
                             click by  {photographer}
                         </Typography>
                     </CardContent>

@@ -23,12 +23,12 @@ const Orders = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [loggedInUser.email])
-    console.log(orders)
+
     const classes = useStyles();
     return (
-        <div>
+        <div className='container'>
             <div className='text-center'>
-                <h2>Hello, {loggedInUser.name}</h2>
+                <h3>Hello, {loggedInUser.displayName || loggedInUser.name}</h3>
                 <h4>You have total {orders.length} orders.</h4>
             </div>
             <TableContainer component={Paper}>

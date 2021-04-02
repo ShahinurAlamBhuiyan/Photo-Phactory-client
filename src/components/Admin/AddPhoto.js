@@ -50,7 +50,6 @@ const AddPhoto = () => {
 
 
     return (
-        <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label for="captionForm">Photo Caption</label> <br />
                 <input className="form-control" id='captionForm' name="caption" placeholder='Natural view' ref={register} required />
@@ -65,7 +64,6 @@ const AddPhoto = () => {
                 <br /><br />
                 <input className='btn btn-danger' type="submit" />
             </form>
-        </div>
     );
 };
 

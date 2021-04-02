@@ -53,8 +53,8 @@ const CheckOut = () => {
     const classes = useStyles();
     console.log(photo)
     return (
-        <div>
-            <h2>Check out</h2>
+        <div className='container'>
+            <h3 className='text-center mb-3'>Check out</h3>
             <TableContainer component={Paper}>
                 <Table className={classes.table} aria-label="simple table">
                     <TableHead>

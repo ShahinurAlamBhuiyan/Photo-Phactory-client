@@ -9,10 +9,9 @@ const Home = () => {
         .then(res => res.json())
         .then(data => setPhotos(data))
     }, [])
-    console.log(photos)
     return (
-        <div className='d-flex justify-content-center align-items-center'>
-            <div className='row container mt-4'>
+        <div className='container'>
+            <div className='row  mt-4  ml-auto'>
             {
                 photos.map( photo => <SingleCard photo={photo} key={photo._id}></SingleCard> )
             }

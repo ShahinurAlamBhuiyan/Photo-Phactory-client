@@ -20,13 +20,13 @@ const useStyles = makeStyles({
 
 const ManagePhoto = () => {
     const [allPhotos, setAllPhotos] = useState([]);
-    const history = useHistory();
 
     useEffect(() => {
         fetch('https://blueberry-surprise-50914.herokuapp.com/photos')
             .then(res => res.json())
             .then(data => setAllPhotos(data))
-    }, [])
+
+    }, [allPhotos]);
 
     const deletePhoto = id => {
         console.log(id)
@@ -38,13 +38,8 @@ const ManagePhoto = () => {
                 console.log(result)
             })
     }
-    const handleSubmit = () => {
-        history.push('/home')
-    }
     const classes = useStyles();
-    console.log(allPhotos)
     return (
-        <div className='text-center'>
             <TableContainer component={Paper}>
                 <Table className={classes.table} aria-label="simple table">
                     <TableHead>
@@ -52,7 +47,7 @@ const ManagePhoto = () => {
                             <TableCell style={{ fontWeight: '700' }}>Photographer Name</TableCell>
                             <TableCell style={{ fontWeight: '700' }}>Photo Name</TableCell>
                             <TableCell style={{ fontWeight: '700' }}>Salary (USD)</TableCell>
-                            <TableCell style={{ fontWeight: '700' }}>Remove\</TableCell>
+                            <TableCell style={{ fontWeight: '700' }}>Remove</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -72,13 +67,7 @@ const ManagePhoto = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-        </div >
     )
 };
 
 export default ManagePhoto;
-
-
-{/* <h4>{photo.photographer}</h4>
-                    <h5>{photo.name}</h5>
-                    <button onClick={() => deletePhoto(photo._id)}>Delete</button> */}
