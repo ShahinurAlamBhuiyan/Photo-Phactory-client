@@ -96,9 +96,9 @@ function Login() {
 
     return (
         <>
-            <div className='pt-5' style={{textAlign:'center'}} >
+            <div className='pt-5' style={{ textAlign: 'center' }} >
                 <div className='d-flex justify-content-center align-items-center flex-column'>
-                    <div style={{ boxShadow: "5px 5px 5px  gray", borderRadius: '10px', padding: '75px'}}>
+                    <div style={{ boxShadow: "5px 5px 5px  gray", borderRadius: '10px', padding: '75px' }}>
                         {
                             newUser ?
                                 <h3 style={{ fontWeight: '700' }}>Create an account</h3>
@@ -120,20 +120,18 @@ function Login() {
 
                                 <p className='pt-3'><small> Don't have an account?</small>  <strong><a style={{ cursor: 'pointer', color: 'red' }} onClick={() => setNewUser(!newUser)}> create an account</a></strong></p>
                         }
-                    </div>
-                </div>
+                        <div className='d-flex justify-content-center align-items-center flex-column flex-wrap'>
 
-                <p style={{textAlign:'center', padding:'10px'}}> <strong>or</strong> </p>
+                            <div className='d-flex justify-content-around align-items-center' style={{ padding: '10px', border: '1px solid black', borderRadius: '40px', cursor: 'pointer', marginBottom: '10px' }}
+                                onClick={fbSignIn}>
+                                    <img width='30' src={facebook} /> 
+                                    <p><strong>facebook sign in</strong> </p>
+                            </div>
 
-
-                <div className='d-flex justify-content-center align-items-center flex-column flex-wrap'>
-
-                    <div className='d-flex justify-content-around align-items-center'  style={{ padding:'10px',border: '1px solid black', borderRadius: '40px', cursor: 'pointer', marginBottom:'10px'}}
-                        onClick={fbSignIn}><img  width='30' src={facebook}/> <p><strong>facebook sign in</strong> </p>
-                    </div>
-
-                    <div  className='d-flex justify-content-center align-items-center' style={{padding:'10px', border: '1px solid black', borderRadius: '40px', cursor: 'pointer'}}
-                        onClick={googleSignIn}><img width='30'  src={google}/> <p> <strong>google sign in</strong> </p>
+                            <div className='d-flex justify-content-center align-items-center' style={{ padding: '10px', border: '1px solid black', borderRadius: '40px', cursor: 'pointer' }}
+                                onClick={googleSignIn}><img width='30' src={google} /> <p> <strong>google sign in</strong> </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

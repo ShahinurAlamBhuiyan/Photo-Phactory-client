@@ -52,7 +52,7 @@ const AddPhoto = () => {
     return (
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label for="captionForm">Photo Caption</label> <br />
-                <input className="form-control" id='captionForm' name="caption" placeholder='Natural view' ref={register} required />
+                <input className="form-control" id='captionForm' name="caption" placeholder='write a short caption' ref={register} required />
                 <br />
                 <label for="photographerName">Photographer Name</label> <br />
                 <input className="form-control" id='photographerName' name="photographer" ref={register} required />

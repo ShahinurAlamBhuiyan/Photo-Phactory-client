@@ -14,7 +14,7 @@ const Header = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     console.log(loggedInUser)
     const handleLogOut = () => {
-        window.location.reload(false);
+        setLoggedInUser("");
     }
 
     return (
@@ -25,31 +25,38 @@ const Header = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
-                    <Nav.Link><Link style={linkStyle} to="/home">Home</Link></Nav.Link>
-                    <Nav.Link><Link style={linkStyle} to="/orders">Orders</Link></Nav.Link>
-                    <Nav.Link><Link style={linkStyle} to="/admin">Admin</Link></Nav.Link>
-                    <Nav.Link><Link style={linkStyle} to="/deals">Deals</Link></Nav.Link>
-                    <Link style={linkStyle} to="/login">
+                    <Nav.Link className='text-center'><Link style={linkStyle} to="/home">Home</Link></Nav.Link>
+                    <Nav.Link className='text-center'><Link style={linkStyle} to="/orders">Orders</Link></Nav.Link>
+                    <Nav.Link className='text-center'><Link style={linkStyle} to="/admin">Admin</Link></Nav.Link>
+                    <Nav.Link className='text-center'><Link style={linkStyle} to="/deals">Deals</Link></Nav.Link>
                         {
                             loggedInUser?.email ?
                                 (
-                                    <div>
+                                    <div className='text-center'>
                                         <NavDropdown title={
                                             <Avatar
-                                            alt={loggedInUser.name || loggedInUser.displayName}
-                                            src={loggedInUser.photoURL  || loggedInUser.photo }
+                                            alt={loggedInUser?.displayName}
+                                            src={loggedInUser?.photo}
                                         >
-                                            {/* {loggedInUser.displayName?loggedInUser.displayName.charAt(0) } */}
+                                            {loggedInUser?.email.charAt(0)}
                                         </Avatar>
                                         } id="basic-nav-dropdown">
-                                           <NavDropdown.Item>{loggedInUser.name || loggedInUser.displayName}</NavDropdown.Item>
+                                           <NavDropdown.Item>{loggedInUser.name || loggedInUser.displayName || loggedInUser.email}</NavDropdown.Item>
                                             <NavDropdown.Item><Button variant='contained' onClick={handleLogOut} color='primary' size='small'>Log out</Button></NavDropdown.Item>
                                         </NavDropdown>
                                     </div>
                                 )
-                                : (<Button variant='contained' color='primary'>LOGIN</Button>)
+                                : (<div className='text-center'>
+                                    <Link
+                                      style={{ color: "black", paddingLeft: "15px" }}
+                                      to="/login"
+                                    >
+                                      <Button variant="contained" color="primary">
+                                        Login
+                                      </Button>
+                                    </Link>
+                                  </div>)
                         }
-                    </Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
