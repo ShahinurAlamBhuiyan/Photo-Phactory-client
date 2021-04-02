@@ -1,4 +1,4 @@
-# ima-zon-simple-client
+# photo-phactory
 #### full stack website where user can hire user.
 ### [Live website](https://photo-phactoryy.web.app/)  |  [Live API server](https://blueberry-surprise-50914.herokuapp.com/photos)
 
