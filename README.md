@@ -1,6 +1,6 @@
 # Photo-Phactory-client
 #### full stack website where user can hire user.
-### [Live website](https://photo-phactoryy.web.app/)  |  [Live API server](https://blueberry-surprise-50914.herokuapp.com/photos)
+### [Live website](https://photo-phactoryy.web.app/)
 
 ## Feautures
 + User can buy photographer 
@@ -19,7 +19,7 @@
 + MongoDB
 + Firebase Authentication
 
-### [Back-end Repository](https://github.com/Porgramming-Hero-web-course/full-stack-server-ShahinurAlamBhuiyan)
+### [Back-end Repository](https://github.com/ShahinurAlamBhuiyan/photo-phactory-server)
 
 ## Let's take a look!
 ![alt text](src/images/siteSS.png)
